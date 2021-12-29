@@ -18,12 +18,9 @@
     #outer-container {
         overflow: hidden;
         width: 100%;
-        /* height: 100vh; */
-        height: 100vh;
-        /*給 Safari 以外的瀏覽器讀取*/
-        height: calc(var(--vh, 1vh) * 100);
+        height: 100%;
         text-align: center;
-        font-size: 14px;
+        font-size: 12px;
         background-color: rgb(0, 47, 156);
         color: white;
     }
@@ -31,7 +28,9 @@
     .themeColor {
         color: rgb(0, 47, 156) !important;
     }
-
+    .pinkColor {
+        color: #FF8884 !important;
+    }
     .lg-swiper,
     .lg-swiper-page {
         margin: 0;
@@ -45,7 +44,8 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
     }
 
     .lg-swiper .lg-swiper-page {
@@ -165,7 +165,7 @@
     .bg-screen {
         position: relative;
         width: 200px;
-        height: 150px;
+        height: 120px;
         transform: translateX(-3000px) translateZ(-200px);
         background-image: url(./images/图1/浏览器.png);
         background-size: 100%;
@@ -174,20 +174,20 @@
     }
 
     .euler-title {
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 700;
     }
 
     .euler-title2 {
         padding: 8px 0 0;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 700;
     }
 
     .page-one .text-box,
     .page-tow .text-box {
         position: relative;
-        padding: 40px 15px 0;
+        padding: 20px 15px 0;
         /* background-color: rgb(0, 47, 156); */
         transform: translateY(-100%);
         animation: oneMove 3s forwards;
@@ -266,12 +266,14 @@
         padding-bottom: 5px;
     }
 
-    .page-tow .click-bob {
-        padding-top: 30px;
-        font-size: 16px;
+    .page-tow .click-bob,
+    .click-bob2 {
+        font-size: 14px;
         font-weight: 700;
     }
-
+    .click-bob {
+        padding-top: 30px;
+    }
     .page-tow .pic {
         position: relative;
         height: 100%;
@@ -365,7 +367,7 @@
 
     .page-three {
         display: flex;
-        padding: 100px 25px 0;
+        padding: 80px 25px 0;
         align-items: center;
         justify-content: start;
     }
@@ -388,7 +390,15 @@
         height: 35px;
         border-bottom: 1px solid black;
     }
-
+   
+    .page-three .more-text {
+        padding-top: 8px;
+    }
+    .more-text p {
+        padding-top: 10px;
+        font-size: 14px;
+        font-weight: 700;
+    }
     .head div {
         position: relative;
         margin-right: 8px;
@@ -397,25 +407,24 @@
         border: 1px solid black;
         border-radius: 50%;
         background-color: #002F9C;
-        -webkit-animation: halo1 1.5s ease-in infinite alternate;
-        animation: halo1 1.5s ease-in infinite alternate;
+        animation: halo1 1.5s ease-in infinite alternate linear;
     }
 
+    
     .head .yellow {
         background-color: #FFB32A;
-        -webkit-animation: halo1 1.5s 1.5s ease-in infinite alternate;
-        animation: halo1 1.5s 1.5s ease-in infinite alternate;
+        animation-delay: 1.5s;
     }
 
     .head .pink {
-        -webkit-animation: halo1 1.5s 3s ease-in infinite alternate;
-        animation: halo1 1.5s 3s ease-in infinite alternate;
         background-color: #FF8884;
+        animation-delay: 3s;
     }
 
     .page-three .body {
         padding: 20px 0;
         color: black;
+        font-size: 14px;
     }
 
     .body p {
@@ -447,7 +456,7 @@
     .mirror {
         top: -50px;
         left: 230px;
-        width: 80px;
+        width: 70px;
         animation: mirror 2s forwards;
     }
 
@@ -541,7 +550,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding-bottom: 40px;
+        padding-bottom: 70px;
         /* max-width: 375px; */
     }
 
@@ -568,7 +577,7 @@
     .earth {
         top: 180px;
         left: 20px;
-        width: 70px;
+        width: 50px;
         animation: earth 10s infinite linear;
     }
 
@@ -578,14 +587,14 @@
     }
 
     .earth2 {
-        top: 80px;
-        right: 40px;
-        width: 60px;
+        top: -30px;
+        right: -20px;
+        width: 80px;
         animation: earth2 10s infinite linear;
     }
 
     .curtains {
-        top: 100px;
+        top: 50px;
         left: 50%;
         width: 100px;
         transform: translateX(-50%);
@@ -597,16 +606,16 @@
     }
 
     .girl {
-        top: 130px;
+        top: 80px;
         right: 50%;
-        width: 50px;
+        width: 65px;
         z-index: 2;
     }
 
     .pink2 {
-        right: 0;
-        bottom: -25px;
-        width: 55px;
+        right: -20px;
+        bottom: -50px;
+        width: 100px;
         animation: pink2 4s infinite linear alternate;
     }
 
@@ -638,22 +647,23 @@
         animation: dash-line 2s;
     }
 
-    .page-four p:nth-child(1) {
+    .page-four p:nth-child(-n + 2) {
         font-weight: 700;
         font-size: 15px;
-        padding-bottom: 15px;
+        padding: 10px 0;
     }
 
-    .page-four p:nth-child(3) {
+    /* .page-four p:nth-child(3) {
         padding-bottom: 15px;
     }
 
     .page-four p:nth-last-child(2) {
         padding-bottom: 15px;
-    }
+    } */
 
     .page-five {
         /* position: relative; */
+        padding: 0 50px;
         align-items: center;
         justify-content: center;
     }
@@ -665,12 +675,13 @@
     }
 
     .page-five .hexagon2 {
-        display: flex;
+        position: relative;
+        /* display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        width: 280px;
-        height: 320px;
+        justify-content: center; */
+        width: 220px;
+        height: 250px;
         font-size: 14px;
         color: black;
         background-image: url(./images/图5/六边形框.png);
@@ -679,8 +690,14 @@
         z-index: 999;
         animation: text-box 2s;
     }
-
+    .page-five .text-box {
+        padding:  10px 0;
+    }
     .hexagon2 p {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
         padding-bottom: 10px;
     }
 
@@ -698,45 +715,46 @@
         position: absolute;
     }
 
-    .bg-five div:nth-child(1) {
-        top: 30px;
-        left: 40px;
+    .bg-five .person2 {
+        top: 25px;
+        left: 25px;
         width: 150px;
         animation: girl1 2s;
     }
 
-    .bg-five div:nth-child(2) {
-        top: 130px;
-        right: 40px;
-        width: 120px;
+    .bg-five .person3 {
+        top: 70px;
+        right: 25px;
+        width: 110px;
         animation: boy 2s;
     }
 
-    .bg-five div:nth-child(3) {
-        top: 45px;
-        right: 100px;
-        width: 100px;
+    .bg-five .bottom-item {
+        bottom: 75px;
+        left: 30px;
+        width: 160px;
         animation: dash-line2 2s;
     }
 
-    .bg-five div:nth-child(4) {
-        top: 135px;
-        left: 50px;
-        width: 80px;
+    .bg-five .withe-logo {
+        bottom: 25px;
+        left: 30px;
+        width: 120px;
+        animation: girl1 2s;
+    }
+
+    .bg-five .qr-code {
+        bottom: 20px;
+        right: 20px;
+        width: 120px;
+        font-size: 12px;
         animation: dash-line 2s;
     }
 
-    .bg-five div:nth-child(5) {
-        bottom: 170px;
-        left: 60px;
-        width: 80px;
-        animation: dash-line 2s;
-    }
-
-    .bg-five div:nth-child(6) {
-        bottom: 0;
-        left: 40px;
-        width: 300px;
+    .bg-five .tip {
+        bottom: 150px;
+        right: 20px;
+        width: 120px;
         animation: cloud4 2s;
     }
 
@@ -757,6 +775,7 @@
     }
 
     .page-six {
+        max-width: 375px;
         /* position: relative; */
     }
 
@@ -766,53 +785,6 @@
         left: 0;
         animation: lighting 1.5s infinite alternate;
     }
-
-    /* 
-    .neon {
-        position: relative;
-        overflow: hidden;
-        word-spacing: 0;
-        filter: brightness(200%);
-    }
-
-    .text {
-        background-color: black;
-        color: white;
-        font-size: 80px;
-        font-weight: bold;
-        font-family: sans-serif;
-        text-transform: uppercase;
-        user-select: none;
-    }
-
-    .text::before {
-        content: attr(data-text);
-        position: absolute;
-        color: white;
-        filter: blur(0.02em);
-        mix-blend-mode: difference;
-    }
-
-    .gradient {
-        position: absolute;
-        background: linear-gradient(45deg, red, gold, lightgreen, gold, red);
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        mix-blend-mode: multiply;
-    }
-
-    .spotlight {
-        position: absolute;
-        top: -100%;
-        left: -100%;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle, white, transparent 25%) center / 25% 25%, radial-gradient(circle, white, black 25%) center / 12.5% 12.5%;
-        animation: textLight 5s linear infinite;
-        mix-blend-mode: color-dodge;
-    } */
     /* .bg-six {
         position: absolute;
         top: 0;
@@ -884,7 +856,7 @@
     }
 
     .six-logo {
-        padding: 25px 0;
+        padding: 20px 0;
         width: 100px;
     }
 
@@ -896,8 +868,8 @@
     /* 圆 */
     .typing {
         visibility: hidden;
-        width: 27ch;
-        animation: typing 4s forwards steps(27), blink 1s 4 alternate;
+        width: 30ch;
+        animation: typing 2.5s forwards steps(30), blink 0.5s 5 alternate;
         white-space: nowrap;
         overflow: hidden;
         border-right: 1px solid white;
@@ -908,16 +880,38 @@
     }
 
     .delay-time1 {
-        animation-delay: 4s;
+        width: 24ch;
+        animation-delay: 2.5s;
+        animation-timing-function: steps(24);
     }
 
     .delay-time2 {
-        animation-delay: 8s;
+        width: 22ch;
+        animation-delay: 5s;
+        animation-timing-function: steps(22);
     }
 
     .delay-time3 {
+        width: 22ch;
+        animation-delay: 7.5s;
+        animation-timing-function: steps(22);
+    }
+
+    .delay-time4 {
+        width: 32ch;
+        animation-delay: 10s;
+        animation-timing-function: steps(32);
+    }
+
+    .delay-time5 {
         width: 10ch;
-        animation: typing 0.5s 12s steps(10) forwards, blink 1s infinite alternate;
+        animation: typing 1s steps(10) forwards, blink 1s infinite alternate;
+        animation-delay: 12.5s;
+    }
+
+    .delay-time6 {
+        width: 22ch;
+        animation-delay: 24s;
     }
 
     @keyframes cloud3Img {
@@ -1201,6 +1195,9 @@
     }
 
     @keyframes pink2 {
+        from {
+            transform: translateZ(-200px);
+        }
         to {
             transform: translateX(-300px);
         }
@@ -1279,40 +1276,9 @@
 
             </div>
             <div class="back">
-                <!-- <div class="contents">
-                    <div class="page page-one">
-                        <div class="text-box">
-                            <div class="geometry">
-                                <div class="circular"><img src="./images//图1/粉圆.png" alt=""></div>
-                                <div class="triangle"><img src="./images/图1/绿三角.png" alt=""></div>
-                                <div class="hexagon-s"><img src="./images/图1//蓝六边.png" alt=""></div>
-                            </div>
-                            <p class="euler-title">openEuler</p>
-                            <p class="euler-title2">开源一周年 感谢有你</p>
-                            <p class="user-name">Dear John</p>
-                            <p class="one-text">2019年12月31日，openEuler正式开源，</p>
-                            <p class="one-text">到今天满两周岁了！</p>
-                            <p class="one-text">因为有你的加入，</p>
-                            <p class="one-text">openEuler才有了生命力，</p>
-                            <p class="one-text">因为有你的付出，</p>
-                            <p class="one-text">openEuler才有了从0到1的成长，</p>
-                        </div>
-                        <div class="pic">
-                            <div class="bg-screen"></div>
-                            <section>
-                                <div class="rotate-item"><img src="images/图1/屏幕大.png" alt="" /></div>
-                                <div class="rotate-item"><img src="images/图1/屏幕中.png" alt="" /></div>
-                                <div class="rotate-item"><img src="images/图1/屏幕小.png" alt="" /></div>
-                                <div class="rotate-item"><img src="images/图1/文件夹.png" alt="" /></div>
-                                <div class="rotate-item"><img src="images/图1/白纸.png" alt="" /></div>
-                                <div class="rotate-item"><img src="images/图1/对话框.png" alt="" /></div>
-                                <div class="person"></div>
-                            </section>
-                            <div class="desk">
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                <div class="contents">
+                  
+                </div>
             </div>
         </div>
         <div class="container box-tow">
@@ -1320,38 +1286,7 @@
 
             </div>
             <div class="back">
-                <!-- <div class="contents">
-                    <div class="page page-three">
-                        <div class="text-box">
-                            <div class="head">
-                                <div class="bule"></div>
-                                <div class="yellow"></div>
-                                <div class="pink"></div>
-                            </div>
-                            <div class="body">
-                                <p class="fade fade-time-1">还记得2020年10月</p>
-                                <p class="fade fade-time-2">你第一次走进我的世界</p>
-                                <p class="fade fade-time-3">到如今已陪伴了我</p>
-                                <p class="fade fade-time-4 themeColor" class="">2020年10月22日，</p>
-                                <p class="fade fade-time-5">你第一次点亮了我的仓库；</p>
-                                <p class="fade fade-time-6 themeColor" class="themeColor">2020年11月10日</p>
-                                <p class="fade fade-time-7">你提交了第一个pr</p>
-                                <p class="fade fade-time-8">心动的时刻总是令人难以忘怀</p>
-                                <p class="fade fade-time-9">你的每一次付出，都会深深印在我的心底。</p>
-                            </div>
-                            <div class="logo fade-time-10"><img src="./images/图3/logo.png" alt=""></div>
-                            <div class="three-bg">
-                                <div class="green-ball1"><img src="./images/图3/绿色圆.png" alt=""></div>
-                                <div class="dash-line"><img src="./images/图3/虚线.png" alt=""></div>
-                                <div class="mirror"><img src="./images/图3/放大镜.png" alt=""></div>
-                            </div>
-                        </div>
-                        <div class="three-bottom">
-                            <img src="./images/图3/底部组建.png" alt="">
-                        </div>
-                        <div class="yellow-ball"><img src="./images/图3/黄色圆.png" alt=""></div>
-                    </div>
-                </div> -->
+              <div class="content"></div>
             </div>
         </div>
         <div class="container box-three">
@@ -1359,29 +1294,7 @@
 
             </div>
             <div class="back">
-                <!-- <div class="contents">
-                    <div class="page page-five">
-                        <div class="bg-five">
-                            <div><img src="./images/图5/人物组建1.png" alt=""></div>
-                            <div><img src="./images/图5/人物组建2.png" alt=""></div>
-                            <div><img src="./images/图5/虚线1.png" alt=""></div>
-                            <div><img src="./images/图5/虚线2.png" alt=""></div>
-                            <div><img src="./images/图5/虚线3.png" alt=""></div>
-                            <div><img src="./images/图5/底部组建.png" alt=""></div>
-                            <div><img src="./images/图5/粉圆.png" alt=""></div>
-                            <div><img class="light" src="./images/图5/灯泡.png" alt=""><img class="lighting"
-                                    src="./images/图5/光.png" alt=""></div>
-                        </div>
-                        <div class="hexagon2">
-                            <div class="text-box">
-                                <p>在这一年里，</p>
-                                <p>你的贡献度击败了社区<span class="green-color">91%</span>开发者。</p>
-                                <p class="pink-color">当之无愧的大佬</p>
-                                <p class="pink-color">请收下我的膝盖！</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+              
             </div>
         </div>
         <div class="container box-four">
@@ -1389,52 +1302,27 @@
 
             </div>
             <div class="back">
-                <!-- <div class="contents">
-                    <div class="page page-six">
-                        <div class="main">
-                            <div class="six-logo"><img src="./images/图6/logo.png" alt=""></div>
-                            <div class="text-box ">
-                                <p class="typing">2021,我们初相识，回忆满满;</p>
-                                <p class="typing delay-time1">2022，我们共成长。未来可期;</p>
-                                <p class="typing delay-time2">愿在开源道路上一直有你陪伴！</p>
-                                <p class="typing delay-time3">新年快乐！</p>
-                                <p class="bold">openEuler 社区</p>
-                                <p class="bold">呈上</p>
-                            </div>
-                        </div>
-                        <div class="bg-six">
-                            <div class="footer">
-                                <img src="./images/图6/人群.png" alt="">
-                            </div>
-                            <div class="border">
-                                <img src="./images/图6/边框.png" alt="">
-                            </div>
-                            <div class="email"><img src="./images/图6/邮件.png" alt=""></div>
-                            <div class="file"><img src="./images/图6/文件夹.png" alt=""></div>
-                            <div class="paper"><img src="./images/图6/白纸.png" alt=""></div>
-                        </div>
-                    </div>
-                </div> -->
+                <div class="content"></div>
+              
             </div>
         </div>
     </div>
     <div class="mob-box swiper" id="outer-container">
         <!-- <div class="page page-one">
             <div class="text-box">
-                <div class="geometry">
-                    <div class="circular"><img src="./images//图1/粉圆.png" alt=""></div>
-                    <div class="triangle"><img src="./images/图1/绿三角.png" alt=""></div>
-                    <div class="hexagon-s"><img src="./images/图1//蓝六边.png" alt=""></div>
-                </div>
-                <p class="euler-title">openEuler</p>
-                <p class="euler-title2">开源一周年 感谢有你</p>
-                <p class="user-name">Dear John</p>
-                <p class="one-text">2019年12月31日，openEuler正式开源，</p>
-                <p class="one-text">到今天满两周岁了！</p>
-                <p class="one-text">因为有你的加入，</p>
-                <p class="one-text">openEuler才有了生命力，</p>
-                <p class="one-text">因为有你的付出，</p>
-                <p class="one-text">openEuler才有了从0到1的成长，</p>
+              
+                <p class="euler-title">openEuler两周岁</p>
+                <p class="euler-title2">遇见开源世界的自己</p>
+                <p class="euler-title2">Dear</p>
+                <p class="user-name pinkColor">John</p>
+                <p class="one-text">openEuler 今天两周岁了！</p>
+                <p class="one-text">在这两年的时光里，openEuler在惊喜地成长：</p>
+                <p class="one-text">社区用户 <span class="yellow-color">320,000+</span>；</p>
+                <p class="one-text">软件包<span class="yellow-color">8600+</span>；</p>
+                <p class="one-text">社区贡献者<span class="yellow-color">7900+</span>；</p>
+                <p class="one-text">商用OSV<span class="yellow-color">11家</span>；</p>
+                <p class="one-text">企业成员<span class="yellow-color">300+家</span></p>
+                <p class="one-text">······</p>
             </div>
             <div class="pic">
                 <div class="bg-screen"></div>
@@ -1450,12 +1338,15 @@
                 <div class="desk">
                 </div>
             </div>
-        </div>
-        <div class="page page-tow">
+        </div> -->
+        <!-- <div class="page page-tow">
             <div class="text-box">
-                <p class="tow-text">在这一周年暨新年之际，</p>
-                <p class="tow-text">想对您真诚道一声感谢!</p>
-                <p class="click-bob">点击热气球进入你和openEuler的专属记忆</p>
+                <p class="tow-text">openEuler 成长的过程记录着你奋斗的岁月</p>
+                <p class="tow-text">在今天这个特殊的日子里</p>
+                <p class="tow-text">请跟openEuler 一起打开时间的匣子</p>
+                <p class="tow-text">看看你在 openEuler 开源社区中熠熠生辉的瞬间······</p>
+                <p class="click-bob">跟着热气球一起查看你的</p>
+                <p class="click-bob2">年度贡献吧！</p>
             </div>
             <div class="pic">
                 <div class="cloud1"><img src="./images/图2/白云2.png" alt=""></div>
@@ -1468,8 +1359,8 @@
                 <div class="pink-ball"><img src="./images/图2/粉色热气球.png" alt=""></div>
                 <div class="bird1"><img src="./images/图2/鸟.png" alt=""></div>
             </div>
-        </div>
-        <div class="page page-three">
+        </div> -->
+        <!-- <div class="page page-three">
             <div class="text-box">
                 <div class="head">
                     <div class="bule"></div>
@@ -1477,22 +1368,27 @@
                     <div class="pink"></div>
                 </div>
                 <div class="body">
-                    <p class="fade fade-time-1">还记得2020年10月</p>
-                    <p class="fade fade-time-2">你第一次走进我的世界</p>
-                    <p class="fade fade-time-3">到如今已陪伴了我</p>
-                    <p class="fade fade-time-4 themeColor" class="">2020年10月22日，</p>
-                    <p class="fade fade-time-5">你第一次点亮了我的仓库；</p>
-                    <p class="fade fade-time-6 themeColor" class="themeColor">2020年11月10日</p>
-                    <p class="fade fade-time-7">你提交了第一个pr</p>
-                    <p class="fade fade-time-8">心动的时刻总是令人难以忘怀</p>
-                    <p class="fade fade-time-9">你的每一次付出，都会深深印在我的心底。</p>
+                    <p class="fade fade-time-1">我们在一起两年了！</p>
+                    <p class="fade fade-time-2 themeColor">2019年11月26日，</p>
+                    <p class="fade fade-time-3">你第一次走进我的世界</p>
+                    <p class="fade fade-time-4 themeColor">2020年10月22日，</p>
+                    <p class="fade fade-time-5">你与社区中的<span class="pinkColor">xxxx</span>第一次建立链接;</p>
+                    <p class="fade fade-time-6 themeColor">2020年11月10日,</p>
+                    <p class="fade fade-time-7">你第一次在社区中评论了<span class="pinkColor">xxxx</span>；</p>
+                    <p class="fade fade-time-8 themeColor">2019年11月26日，</p>
+                    <p class="fade fade-time-9"><span class="pinkColor">xxxx</span>第一个给了你温暖的评论；</p>
+                    <p class="fade fade-time-10">初来乍到,<span class="pinkColor">xxxx</span>第一个解决了你的问题；</p>
+                    <p class="fade fade-time-11">回忆满满,你与<span class="pinkColor">xxxx</span>联系最多</p>
                 </div>
-                <div class="logo fade-time-10"><img src="./images/图3/logo.png" alt=""></div>
+               
                 <div class="three-bg">
-                    <div class="green-ball1"><img src="./images/图3/绿色圆.png" alt=""></div>
-                    <div class="dash-line"><img src="./images/图3/虚线.png" alt=""></div>
                     <div class="mirror"><img src="./images/图3/放大镜.png" alt=""></div>
                 </div>
+            </div>
+            <div class="more-text">
+                <p>时光悄然流逝，</p>
+                <p>但这些流光溢彩的回忆，</p>
+                <p>我铭记于心 ······</p>
             </div>
             <div class="three-bottom">
                 <img src="./images/图3/底部组建.png" alt="">
@@ -1501,60 +1397,54 @@
         </div> -->
         <!-- <div class="page page-four">
             <div class="pic">
-                <div class="keyboard"><img src="./images/图4/键盘.png" alt=""></div>
                 <div class="earth"><img src="./images/图4/地球1.png" alt=""></div>
                 <div class="earth2"><img src="./images/图4/地球2.png" alt=""></div>
                 <div class="girl"><img src="./images/图4/人.png" alt=""></div>
                 <div class="curtains"><img src="./images/图4/白色logo+窗帘.png" alt=""></div>
-                <div class="pink2"><img src="./images/图4/粉圆.png" alt=""></div>
+                <div class="pink2"><img src="./images/图4/地球1.png" alt=""></div>
                 <div class="green2"><img src="./images/图4/绿色三角.png" alt=""></div>
-                <div class="yellow2"><img src="./images/图4/网格+黄色圆.png" alt=""></div>
-                <div class="dash2"><img src="./images/图4/虚线1.png" alt=""></div>
-                <div class="dash3"><img src="./images/图4/虚线2.png" alt=""></div>
             </div>
             <div class="text-box">
-                <p class="fade fade-time-1">回望过去这一年，我快速成长</p>
-                <p class="fade fade-time-2">迭代了20.3和20.9两个版本</p>
-                <p class="fade fade-time-3">而你在这其间</p>
-                <p class="fade fade-time-4">提交了<span class="yellow-color">9999</span>个pr，</p>
-                <p class="fade fade-time-5">提交了<span class="yellow-color">9999</span>个issue，</p>
-                <p class="fade fade-time-6">提交了<span class="yellow-color">9999</span>条评论，</p>
-                <p class="fade fade-time-7">贡献了<span class="yellow-color">9999</span>行代码，</p>
-                <p class="fade fade-time-8">加入了<span class="yellow-color">9999</span>个sig组，</p>
-                <p class="fade fade-time-9">点亮了<span class="yellow-color">9999</span>个仓库，</p>
-                <p class="fade fade-time-10">积硅步而至千里，</p>
-                <p class="fade fade-time-11">你踏出的每一步对我来说都异常珍贵。</p>
+                <p class="fade fade-time-1">回望2021，我快速成长</p>
+                <p class="fade fade-time-2">而你在这一年中</p>
+                <p class="fade fade-time-3">提交了<span class="yellow-color">9999</span>个pr，</p>
+                <p class="fade fade-time-4">提交了<span class="yellow-color">9999</span>个issue，</p>
+                <p class="fade fade-time-5">提交了<span class="yellow-color">9999</span>条评论，</p>
+                <p class="fade fade-time-6">贡献了<span class="yellow-color">9999</span>行代码，</p>
+                <p class="fade fade-time-7">加入了<span class="yellow-color">9999</span>个sig组，</p>
+                <p class="fade fade-time-8">点亮了<span class="yellow-color">9999</span>个仓库，</p>
+                <p class="fade fade-time-9">参与了<span class="yellow-color">12</span>次会议，</p>
             </div>
         </div> -->
         <!-- <div class="page page-five">
             <div class="bg-five">
-                <div><img src="./images/图5/人物组建1.png" alt=""></div>
-                <div><img src="./images/图5/人物组建2.png" alt=""></div>
-                <div><img src="./images/图5/虚线1.png" alt=""></div>
-                <div><img src="./images/图5/虚线2.png" alt=""></div>
-                <div><img src="./images/图5/虚线3.png" alt=""></div>
-                <div><img src="./images/图5/底部组建.png" alt=""></div>
-                <div><img src="./images/图5/粉圆.png" alt=""></div>
-                <div><img class="light" src="./images/图5/灯泡.png" alt=""><img class="lighting" src="./images/图5/光.png"
-                        alt=""></div>
+                <div class="person2"><img src="./images/图5/人物组建1.png" alt=""></div>
+                <div class="person3"><img src="./images/图5/人物组建2.png" alt=""></div>
+                <div class="bottom-item"><img src="./images/图5/底部组建.png" alt=""></div>
+                <div class="withe-logo"><img src="./images/图5/logo.png" alt=""></div>
+                <div class="qr-code"><img src="./images/图5/二维码框.png" alt="">
+                    <p>查看您的社区年度报告</p>
+                </div>
+                <div class="tip"><img src="./images/图5/记得截图分享朋友圈对话.png" alt=""></div>
+            </div>
+            <div class="text-box">
+                <p>在这一年里，</p>
+                <p>你的贡献度击败了社区<span class="yellow-color">91%</span>开发者。</p>
             </div>
             <div class="hexagon2">
-                <div class="text-box">
-                    <p>在这一年里，</p>
-                    <p>你的贡献度击败了社区<span class="green-color">91%</span>开发者。</p>
-                    <p class="pink-color">当之无愧的大佬</p>
-                    <p class="pink-color">请收下我的膝盖！</p>
-                </div>
+                <p class="pink-color">百炼成师</p>
             </div>
         </div> -->
         <!-- <div class="page page-six">
             <div class="main">
                 <div class="six-logo"><img src="./images/图6/logo.png" alt=""></div>
                 <div class="text-box ">
-                    <p class="typing">2021,我们初相识，回忆满满;</p>
-                    <p class="typing delay-time1">2022，我们共成长。未来可期;</p>
-                    <p class="typing delay-time2">愿在开源道路上一直有你陪伴！</p>
-                    <p class="typing delay-time3">新年快乐！</p>
+                    <p class="typing">你们从不同途径来到我的开源世界</p>
+                    <p class="typing delay-time1">但却因相同的目的留了下来</p>
+                    <p class="typing delay-time2">谢谢你们的坚持与贡献，</p>
+                    <p class="typing delay-time3">才打造出我更好的模样！</p>
+                    <p class="typing delay-time4">期待你我携手并肩，继续坚定向前！</p>
+                    <p class="typing delay-time5">新年快乐！</p>
                     <p class="bold">openEuler 社区</p>
                     <p class="bold">呈上</p>
                 </div>
@@ -1573,17 +1463,7 @@
         </div> -->
     </div>
     <script>
-        // 适配safair
-        function safariHacks() {
-            let windowsVH = window.innerHeight / 100;
-            console.log(windowsVH);
-            document.querySelector('#outer-container').style.setProperty('--vh', windowsVH + 'px');
-            window.addEventListener('resize', function () {
-                document.querySelector('#outer-container').style.setProperty('--vh', windowsVH + 'px');
-            });
-        }
-
-        safariHacks();
+      
         // 播放音乐
         let container = document.querySelector('#outer-container');
         document.body.addEventListener("click", function () {
@@ -1593,10 +1473,9 @@
         // 获取数据
         function getData() {
             let data = []
-            axios.get('https://omapi.osinfra.cn/query/newYear/2022?community=openeuler&user=user1').then(res => {
+            axios.get('https://omapi.osinfra.cn/query/newYear/2022?community=openeuler').then(res => {
                 data = res.data.data[0];
                 let EndTime = new Date(data.first_time_of_enter);
-                // EndTime = date.getTime();
                 var NowTime = new Date();
                 var t = -(EndTime.getTime() - NowTime.getTime());
                 var d = Math.floor(t / 1000 / 60 / 60 / 24);
@@ -1607,6 +1486,7 @@
                 var html = d + " 天" + h + " 小时";
                 // console.log(date);
                 console.log(html);
+                console.log(data);
                 let percentage = parseFloat(data.beat_percentage) * 100;
                 intaPc(data, percentage);
                 intaSwiper(data, percentage);
@@ -1768,22 +1648,22 @@
         let swper = null;
         function intaSwiper(data, percentage) {
             let list = [{
-                content: `<div class="page page-one">
+                content: `
+        <div class="page page-one">
             <div class="text-box">
-                <div class="geometry">
-                    <div class="circular"><img src="./images//图1/粉圆.png" alt=""></div>
-                    <div class="triangle"><img src="./images/图1/绿三角.png" alt=""></div>
-                    <div class="hexagon-s"><img src="./images/图1//蓝六边.png" alt=""></div>
-                </div>
-                <p class="euler-title">openEuler</p>
-                <p class="euler-title2">开源一周年 感谢有你</p>
-                <p class="user-name">Dear ${data.user_login}</p>
-                <p class="one-text">2019年12月31日，openEuler正式开源，</p>
-                <p class="one-text">到今天满两周岁了！</p>
-                <p class="one-text">因为有你的加入，</p>
-                <p class="one-text">openEuler才有了生命力，</p>
-                <p class="one-text">因为有你的付出，</p>
-                <p class="one-text">openEuler才有了从0到1的成长，</p>
+              
+                <p class="euler-title">openEuler两周岁</p>
+                <p class="euler-title2">遇见开源世界的自己</p>
+                <p class="euler-title2">Dear</p>
+                <p class="user-name pinkColor">${data.user_login}</p>
+                <p class="one-text">openEuler 今天两周岁了！</p>
+                <p class="one-text">在这两年的时光里，openEuler在惊喜地成长：</p>
+                <p class="one-text">社区用户 <span class="yellow-color">320,000+</span>；</p>
+                <p class="one-text">软件包<span class="yellow-color">8600+</span>；</p>
+                <p class="one-text">社区贡献者<span class="yellow-color">7900+</span>；</p>
+                <p class="one-text">商用OSV<span class="yellow-color">11家</span>；</p>
+                <p class="one-text">企业成员<span class="yellow-color">300+家</span></p>
+                <p class="one-text">······</p>
             </div>
             <div class="pic">
                 <div class="bg-screen"></div>
@@ -1801,11 +1681,15 @@
             </div>
         </div>`
             }, {
-                content: `<div class="page page-tow">
+                content: `
+        <div class="page page-tow">
             <div class="text-box">
-                <p class="tow-text">在这一周年暨新年之际，</p>
-                <p class="tow-text">想对您真诚道一声感谢!</p>
-                <p class="click-bob">点击热气球进入你和openEuler的专属记忆</p>
+                <p class="tow-text">openEuler 成长的过程记录着你奋斗的岁月</p>
+                <p class="tow-text">在今天这个特殊的日子里</p>
+                <p class="tow-text">请跟openEuler 一起打开时间的匣子</p>
+                <p class="tow-text">看看你在 openEuler 开源社区中熠熠生辉的瞬间······</p>
+                <p class="click-bob">跟着热气球一起查看你的</p>
+                <p class="click-bob2">年度贡献吧！</p>
             </div>
             <div class="pic">
                 <div class="cloud1"><img src="./images/图2/白云2.png" alt=""></div>
@@ -1820,7 +1704,8 @@
             </div>
         </div>`
             }, {
-                content: `<div class="page page-three">
+                content: `
+                <div class="page page-three">
             <div class="text-box">
                 <div class="head">
                     <div class="bule"></div>
@@ -1828,22 +1713,27 @@
                     <div class="pink"></div>
                 </div>
                 <div class="body">
-                    <p class="fade fade-time-1">还记得${data.first_time_of_enter}</p>
-                    <p class="fade fade-time-2">你第一次走进我的世界</p>
-                    <p class="fade fade-time-3">到如今已陪伴了我${data.total_time_of_exist}天</p>
-                    <p class="fade fade-time-4 themeColor" class="">${data.first_time_of_star}</p>
-                    <p class="fade fade-time-5">你第一次点亮了我的仓库；</p>
-                    <p class="fade fade-time-6 themeColor" class="themeColor">${data.first_time_of_submit_pr}</p>
-                    <p class="fade fade-time-7">你提交了第一个pr</p>
-                    <p class="fade fade-time-8">心动的时刻总是令人难以忘怀</p>
-                    <p class="fade fade-time-9">你的每一次付出，都会深深印在我的心底。</p>
+                    <p class="fade fade-time-1">我们在一起两年了！</p>
+                    <p class="fade fade-time-2 themeColor">${data.first_time_of_enter}，</p>
+                    <p class="fade fade-time-3">你第一次走进我的世界</p>
+                    <p class="fade fade-time-4 themeColor">${data.first_time_of_contact}，</p>
+                    <p class="fade fade-time-5">你与社区中的<span class="pinkColor">${data.first_user_login_of_contact}</span>第一次建立链接;</p>
+                    <p class="fade fade-time-6 themeColor">${data.first_time_of_comment_other},</p>
+                    <p class="fade fade-time-7">你第一次在社区中评论了<span class="pinkColor">${data.first_user_login_of_comment}</span>；</p>
+                    <p class="fade fade-time-8 themeColor">${data.first_time_of_be_comment}，</p>
+                    <p class="fade fade-time-9"><span class="pinkColor">${data.first_user_login_of_be_comment}</span>第一个给了你温暖的评论；</p>
+                    <p class="fade fade-time-10">初来乍到,<span class="pinkColor">${data.first_user_login_of_be_comment}</span>第一个解决了你的问题；</p>
+                    <p class="fade fade-time-11">回忆满满,你与<span class="pinkColor">${data.user_login_with_most_contact}</span>联系最多</p>
                 </div>
-                <div class="logo fade-time-10"><img src="./images/图3/logo.png" alt=""></div>
+               
                 <div class="three-bg">
-                    <div class="green-ball1"><img src="./images/图3/绿色圆.png" alt=""></div>
-                    <div class="dash-line"><img src="./images/图3/虚线.png" alt=""></div>
                     <div class="mirror"><img src="./images/图3/放大镜.png" alt=""></div>
                 </div>
+            </div>
+            <div class="more-text">
+                <p>时光悄然流逝，</p>
+                <p>但这些流光溢彩的回忆，</p>
+                <p>我铭记于心 ······</p>
             </div>
             <div class="three-bottom">
                 <img src="./images/图3/底部组建.png" alt="">
@@ -1851,64 +1741,61 @@
             <div class="yellow-ball"><img src="./images/图3/黄色圆.png" alt=""></div>
         </div>`
             }, {
-                content: `<div class="page page-four">
+                content: `
+        <div class="page page-four">
             <div class="pic">
-                <div class="keyboard"><img src="./images/图4/键盘.png" alt=""></div>
                 <div class="earth"><img src="./images/图4/地球1.png" alt=""></div>
                 <div class="earth2"><img src="./images/图4/地球2.png" alt=""></div>
                 <div class="girl"><img src="./images/图4/人.png" alt=""></div>
                 <div class="curtains"><img src="./images/图4/白色logo+窗帘.png" alt=""></div>
-                <div class="pink2"><img src="./images/图4/粉圆.png" alt=""></div>
+                <div class="pink2"><img src="./images/图4/地球1.png" alt=""></div>
                 <div class="green2"><img src="./images/图4/绿色三角.png" alt=""></div>
-                <div class="yellow2"><img src="./images/图4/网格+黄色圆.png" alt=""></div>
-                <div class="dash2"><img src="./images/图4/虚线1.png" alt=""></div>
-                <div class="dash3"><img src="./images/图4/虚线2.png" alt=""></div>
             </div>
             <div class="text-box">
-                <p class="fade fade-time-1">回望过去这一年，我快速成长</p>
-                <p class="fade fade-time-2">迭代了20.3和20.9两个版本</p>
-                <p class="fade fade-time-3">而你在这其间</p>
-                <p class="fade fade-time-4">提交了<span class="yellow-color">${data.pr_num}</span>个pr，</p>
-                <p class="fade fade-time-5">提交了<span class="yellow-color">${data.issue_nun}</span>个issue，</p>
-                <p class="fade fade-time-6">提交了<span class="yellow-color">${data.comment_num}</span>条评论，</p>
-                <p class="fade fade-time-7">贡献了<span class="yellow-color">${data.code_lines}</span>行代码，</p>
-                <p class="fade fade-time-8">加入了<span class="yellow-color">${data.sig_num}</span>个sig组，</p>
-                <p class="fade fade-time-9">点亮了<span class="yellow-color">${data.star_num}</span>个仓库，</p>
-                <p class="fade fade-time-10">积硅步而至千里</p>
-                <p class="fade fade-time-11">你踏出的每一步对我来说都异常珍贵</p>
+                <p class="fade fade-time-1">回望2021，我快速成长</p>
+                <p class="fade fade-time-2">而你在这一年中</p>
+                <p class="fade fade-time-3">提交了<span class="yellow-color">${data.pr_num}</span>个pr，</p>
+                <p class="fade fade-time-4">提交了<span class="yellow-color">${data.issue_nun}</span>个issue，</p>
+                <p class="fade fade-time-5">提交了<span class="yellow-color">${data.comment_num}</span>条评论，</p>
+                <p class="fade fade-time-6">贡献了<span class="yellow-color">${data.code_lines}</span>行代码，</p>
+                <p class="fade fade-time-7">加入了<span class="yellow-color">${data.sig_num}</span>个sig组，</p>
+                <p class="fade fade-time-8">点亮了<span class="yellow-color">${data.star_num}</span>个仓库，</p>
+                <p class="fade fade-time-9">参与了<span class="yellow-color">${data}</span>次会议，</p>
             </div>
         </div>`
             }, {
-                content: `<div class="page page-five">
+                content: `
+        <div class="page page-five">
             <div class="bg-five">
-                <div><img src="./images/图5/人物组建1.png" alt=""></div>
-                <div><img src="./images/图5/人物组建2.png" alt=""></div>
-                <div><img src="./images/图5/虚线1.png" alt=""></div>
-                <div><img src="./images/图5/虚线2.png" alt=""></div>
-                <div><img src="./images/图5/虚线3.png" alt=""></div>
-                <div><img src="./images/图5/底部组建.png" alt=""></div>
-                <div><img src="./images/图5/粉圆.png" alt=""></div>
-                <div><img class="light" src="./images/图5/灯泡.png" alt=""><img class="lighting" src="./images/图5/光.png"
-                        alt=""></div>
+                <div class="person2"><img src="./images/图5/人物组建1.png" alt=""></div>
+                <div class="person3"><img src="./images/图5/人物组建2.png" alt=""></div>
+                <div class="bottom-item"><img src="./images/图5/底部组建.png" alt=""></div>
+                <div class="withe-logo"><img src="./images/图5/logo.png" alt=""></div>
+                <div class="qr-code"><img src="./images/图5/二维码框.png" alt="">
+                    <p>查看您的社区年度报告</p>
+                </div>
+                <div class="tip"><img src="./images/图5/记得截图分享朋友圈对话.png" alt=""></div>
+            </div>
+            <div class="text-box">
+                <p>在这一年里，</p>
+                <p>你的贡献度击败了社区<span class="yellow-color">${percentage}%</span>开发者。</p>
             </div>
             <div class="hexagon2">
-                <div class="text-box">
-                    <p>在这一年里，</p>
-                    <p>你的贡献度击败了社区<span class="green-color">${percentage}</span>开发者。</p>
-                    <p class="pink-color">当之无愧的大佬</p>
-                    <p class="pink-color">请收下我的膝盖！</p>
-                </div>
+                <p class="pink-color">百炼成师</p>
             </div>
         </div>`
             }, {
-                content: `<div class="page page-six">
+                content: `
+        <div class="page page-six">
             <div class="main">
                 <div class="six-logo"><img src="./images/图6/logo.png" alt=""></div>
                 <div class="text-box ">
-                    <p class="typing">2021,我们初相识，回忆满满;</p>
-                    <p class="typing delay-time1">2022，我们共成长。未来可期;</p>
-                    <p class="typing delay-time2">愿在开源道路上一直有你陪伴！</p>
-                    <p class="typing delay-time3">新年快乐！</p>
+                    <p class="typing">你们从不同途径来到我的开源世界</p>
+                    <p class="typing delay-time1">但却因相同的目的留了下来</p>
+                    <p class="typing delay-time2">谢谢你们的坚持与贡献，</p>
+                    <p class="typing delay-time3">才打造出我更好的模样！</p>
+                    <p class="typing delay-time4">期待你我携手并肩，继续坚定向前！</p>
+                    <p class="typing delay-time5">新年快乐！</p>
                     <p class="bold">openEuler 社区</p>
                     <p class="bold">呈上</p>
                 </div>
@@ -1931,7 +1818,9 @@
                 data: list,
             });
         }
-    </script>
+        
+        
+   </script>
 </body>
 
 </html>
